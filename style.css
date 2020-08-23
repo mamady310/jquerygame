@@ -31,3 +31,10 @@
     box-shadow: 5px 5px;
     height: 80px;
 }
+.back{
+    display: block;
+    display: none;
+}
+.front{
+    display: none;
+}
