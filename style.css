@@ -1,0 +1,15 @@
+.startBtn{
+    position: absolute;
+    top: 125px;
+    left: 100px;
+    width: 200px;
+    z-index: 1;
+    background-color: indianred;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    font-size: 2em;
+}
+
