@@ -3,6 +3,15 @@ const boxes = ['red', 'cyan', 'teal', 'purple', 'yellow', 'green', 'pink', 'gold
 const game = {};
 $('.startBtn').click(startGame);
 
+$('.game').on("click",".active", function(event){
+    console.log($(this).data('val'));
+    if(!game.pause){
+     game.clicks++;
+     $('.score').text();
+        
+    }
+} )
+
 function arrayRandom(arr) {
     arr.sort(function(){
         return .5 - Math.random();
@@ -26,7 +35,7 @@ $.each(game.newArray, function(key, value){
     console.log(value);
     let box = $('<div>');
     console.log(box);
-    box.addClass('box');
+    box.addClass('box active');
     box.data('cnt',key+1);
     box.data('val', value);
     let back = $('<div>');
