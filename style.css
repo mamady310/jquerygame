@@ -32,8 +32,8 @@
     height: 80px;
 }
 .back{
-    display: block;
+    display: none;
 }
 .front{
-    display: none;
+    display: block;
 }
