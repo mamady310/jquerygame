@@ -16,12 +16,20 @@ $('.game').html('');
 $.each(game.newArray, function(key, value){
     // console.log(key);
     // console.log(value)
-    let box = $('<div>')
+    let box = $('<div>');
     console.log(box);
     box.addClass('box');
     box.data('cnt', key + 1);
-    box.data('val', value)
-    let back =$('<div>')
+    box.data('val', value);
+    let back = $('<div>');
+    back.addClass('back');
+    back.html(key+1);
+    box.append(back);
+    let front = $('<div>');
+    front.css('background-color', value);
+    front.text(value);
+    front.addClass('front');
+    box.append(front);
 })
 }
 
