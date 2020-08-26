@@ -17,6 +17,7 @@ $('.game').on("click", ".active", function (event) {
         game.pause = false;
         console.log('Match');
         removeItems(game.sel[0].data('val'));
+        game.sel = [];
         if (game.newArray.length == 0) {
           console.log('GAME OVER');
         }
@@ -41,9 +42,16 @@ function removeItems(val) {
  
 function hideCard() {
   console.log('no match');
+  flipper(game.sel[0]);
+  flipper(game.sel[1]);
   clearInterval(game.timer);
   game.sel = [];
   game.pause = false;
+}
+function flipper(el) {
+    el.addClass('active');
+    el.find('.back').show();
+    el.find('.front').hide();
 }
  
 function arrayRandomize(arr) {
