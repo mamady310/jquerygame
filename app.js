@@ -1,9 +1,8 @@
-//const boxes = ['red', 'blue', 'green', 'purple', 'yellow', 'pink', 'teal', 'gold'];
-const boxes = ['red', 'blue'];
+const boxes = ['red', 'blue', 'green', 'purple', 'yellow', 'pink', 'teal', 'gold'];
 const game = {};
 $('.startBtn').click(startGame);
 $('.game').on("click", ".active", function (event) {
-  console.log($(this).data('val'));
+//   console.log($(this).data('val'));
   if (!game.pause) {
     game.clicks++;
     $('.score').text(game.clicks);
@@ -12,44 +11,44 @@ $('.game').on("click", ".active", function (event) {
     $(this).find('.back').hide();
     $(this).find('.front').show();
     if (game.sel.length === 2) {
-      console.log(game.sel);
+    //   console.log(game.sel);
       if (game.sel[0].data('val') == game.sel[1].data('val')) {
         game.pause = false;
         console.log('Match');
         removeItems(game.sel[0].data('val'));
         game.sel = [];
         if (game.newArray.length == 0) {
-          console.log('GAME OVER');
+        //   console.log('GAME OVER');
           gameOver();
         
         }
-        //removeItems(game.sel[1].data('val'));
+       
       }
       else {
         game.pause = true;
-        game.timer = setInterval(hideCard, 100);
+        game.timer = setInterval(hideCard, 200);
       }
-      //check match
+     
     }
   }
 })
  
 function gameOver(){
-    console.log('gameover');
+    // console.log('gameover');
     $('.startBtn').show();
     $('.score').text('Game over '+ game.clicks + ' clicks');
 }
 
 function removeItems(val) {
-  console.log(game.newArray);
+//   console.log(game.newArray);
   game.newArray = game.newArray.filter(function (ele) {
     return ele != val;
   })
-  console.log(game.newArray);
+//   console.log(game.newArray);
 }
  
 function hideCard() {
-  console.log('no match');
+//   console.log('no match');
   flipper(game.sel[0]);
   flipper(game.sel[1]);
   clearInterval(game.timer);
@@ -69,20 +68,20 @@ function arrayRandomize(arr) {
 }
  
 function startGame() {
-  console.log('start');
+//   console.log('start');
   $('.startBtn').hide();
   game.clicks = 0;
   game.pause = false;
   game.sel = [];
   game.newArray = boxes.concat(boxes);
-  console.log(game.newArray);
+//   console.log(game.newArray);
   arrayRandomize(game.newArray);
   $('.game').html('');
   $.each(game.newArray, function (key, value) {
-    console.log(key);
-    console.log(value);
+    // console.log(key);
+    // console.log(value);
     let box = $('<div>');
-    console.log(box);
+    // console.log(box);
     box.addClass('box active');
     box.data('cnt', key + 1);
     box.data('val', value);
