@@ -20,6 +20,8 @@ $('.game').on("click", ".active", function (event) {
         game.sel = [];
         if (game.newArray.length == 0) {
           console.log('GAME OVER');
+          gameOver();
+        
         }
         //removeItems(game.sel[1].data('val'));
       }
@@ -32,6 +34,12 @@ $('.game').on("click", ".active", function (event) {
   }
 })
  
+function gameOver(){
+    console.log('gameover');
+    $('.startBtn').show();
+    $('.score').text('Game over '+ game.clicks + ' clicks');
+}
+
 function removeItems(val) {
   console.log(game.newArray);
   game.newArray = game.newArray.filter(function (ele) {
