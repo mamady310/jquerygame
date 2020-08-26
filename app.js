@@ -7,8 +7,8 @@ $('.game').on("click",".active", function(event){
     console.log($(this).data('val'));
     if(!game.pause){
      game.clicks++;
-     $('.score').text();
-        
+     $('.score').text(game.clicks);
+
     }
 } )
 
